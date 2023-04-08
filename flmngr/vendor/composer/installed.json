@@ -1,0 +1,61 @@
+{
+    "packages": [
+        {
+            "name": "edsdk/flmngr-server-php",
+            "version": "1.5.1",
+            "version_normalized": "1.5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edsdk/flmngr-server-php.git",
+                "reference": "555309fa888ac8051a3de117fbbdb641da47ca9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edsdk/flmngr-server-php/zipball/555309fa888ac8051a3de117fbbdb641da47ca9e",
+                "reference": "555309fa888ac8051a3de117fbbdb641da47ca9e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-gd": "*",
+                "ext-json": "*"
+            },
+            "time": "2022-11-25T15:24:02+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "EdSDK\\FlmngrServer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "EdSDK / N1ED / Flmngr team",
+                    "email": "support@n1ed.zendesk.com"
+                }
+            ],
+            "description": "Flmngr file manager PHP backend",
+            "homepage": "https://flmngr.com",
+            "keywords": [
+                "file",
+                "finder",
+                "image",
+                "imgpen",
+                "manager",
+                "server",
+                "upload"
+            ],
+            "support": {
+                "issues": "https://github.com/edsdk/flmngr-server-php/issues",
+                "source": "https://github.com/edsdk/flmngr-server-php/tree/1.5.1"
+            },
+            "install-path": "../edsdk/flmngr-server-php"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

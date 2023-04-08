@@ -1,0 +1,25 @@
+body {
+  padding: 20px;
+  background-color: #F4F4F4;
+}
+
+#images .image {
+  border: 1px solid #DDD;
+  box-shadow: 5px 5px 0 0 #DDD;
+  background-color: white;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 25px 25px 0;
+}
+
+#images .image img {
+  max-height: 350px;
+  border: 1px solid #DDD;
+}
+
+#images .image p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #444;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flmngr file manager sample</title>
+
+	<script src="https://unpkg.com/flmngr"></script>
+	<script>
+		Flmngr.load({
+			apiKey: "FLMNFLMN",
+			urlFileManager: 'https://assets.gd-hub.eu/flmngr',
+			urlFiles: 'https://assets.gd-hub.eu/files/New/Categorised/Difficulties'
+		  }, {
+			onFlmngrLoaded: () => {
+			  attachOnClickListenerToButton();
+			}
+		  });
+		  
+		  function attachOnClickListenerToButton() {
+			let elBtn = document.getElementById("btn");
+		  
+			// Style button as ready to be pressed
+			elBtn.style.opacity = 1;
+			elBtn.style.cursor = "pointer";
+			let elLoading = document.getElementById("loading");
+			elLoading.parentElement.removeChild(elLoading);
+		  
+			// Add a listener for selecting files
+			elBtn.addEventListener("click", () => {
+			  selectFiles();
+			});  
+		  }
+		  
+		  function selectFiles() {
+			Flmngr.open({
+			  isMultiple: false,
+			  acceptExtensions: ["png", "jpeg", "jpg", "webp", "gif", "prproj", "mov"],
+			  onFinish: (files) => {
+				showSelectedImage(files);
+			  }
+			});
+		  }
+		  
+		  function showSelectedImage(files) {
+			let elImages = document.getElementById("images");
+			elImages.innerHTML = "";
+		  
+			let file = files[0];
+		  
+			let el = document.createElement("div");
+			el.className = "image";
+			elImages.appendChild(el);   
+		  
+			let elImg = document.createElement("img");
+			elImg.src = file.url;
+			elImg.alt = "Image selected in Flmngr";
+			el.appendChild(elImg);
+		  
+			let elP = document.createElement("p");
+			elP.textContent = file.url;
+			el.appendChild(elP);
+		  }
+	</script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css"/>
+
+</head>
+<body>
+
+	<h1 class="h5 mb-3">Flmngr file manager: select a single image</h1>
+
+	<div id="btn" class="btn btn-primary" style="opacity:0.2;cursor:default">Select image...</div>
+	<div id="loading" style="font-size:12px">Loading file manager...</div>
+
+	<h2 class="h5 mt-5">Selected image</h2>
+	<div id="images">
+		No image selected yet.
+	</div>
+
+</body>
+</html>
